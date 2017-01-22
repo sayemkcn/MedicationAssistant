@@ -5,14 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <button ion-button (click)="addNewButtonClick()">Button</button>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-fab top right edge>
+    <button (click)="addNewButtonClick()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <ion-item *ngFor="let drug of druglist">
+      <h2>{{drug.type}} {{drug.name}}</h2>
+      <p>{{drug.medicationCounter}} times a day for {{drug.days}} days | {{drug.comment}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
