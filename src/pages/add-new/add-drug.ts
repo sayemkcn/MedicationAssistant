@@ -11,9 +11,10 @@ import {IDrug} from '../../model/idrug';
   providers : [IDrug]
 })
 export class AddDrug {
+  numbers : number[];
   
   constructor(public viewCtrl: ViewController, private drug : IDrug) {
-
+  
   }
 
   addDrugButtonClick(){
@@ -22,6 +23,12 @@ export class AddDrug {
 
   dismiss(): void{
     this.viewCtrl.dismiss();
+  }
+
+  medicationCountClick(){
+    this.numbers = Array(this.drug.medicationCounter).fill(this.drug.medicationCounter).map((x,i)=>i+1)
+    this.drug.times = new Array(this.drug.medicationCounter); // intialise array for binding
+    console.log(this.drug);
   }
 
 }

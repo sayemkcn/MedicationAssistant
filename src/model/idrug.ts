@@ -5,6 +5,7 @@ import {Injectable} from '@angular/core';
 export class IDrug implements Drug{
     name : string;
     type : string;
+    medicationCounter: number;
     times : Date[];
     days : number;
     comment : string;

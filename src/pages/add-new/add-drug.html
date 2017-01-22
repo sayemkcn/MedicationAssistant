@@ -32,13 +32,19 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Time</ion-label>
-      <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times"></ion-datetime>
+      <ion-label>How many times you've to take this madication in a day?</ion-label>
+      <ion-select [(ngModel)]="drug.medicationCounter" (ionChange)="medicationCountClick()">
+        <ion-option *ngFor="let x of [1,2,3,4,5,6,7,8,9,10]" [value]="x">{{x}}</ion-option>
+      </ion-select>
     </ion-item>
-    <ion-item>
-      <ion-label>Time</ion-label>
-      <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times"></ion-datetime>
-    </ion-item>
+
+    <ion-list *ngIf="drug.medicationCounter > 0">
+      <ion-item *ngFor="let x of numbers">
+        <ion-label>Time {{x}}</ion-label>
+        <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times[x-1]"></ion-datetime>
+      </ion-item>
+    </ion-list>
+
 
     <button ion-button full (click)="addDrugButtonClick()">Add Drug</button>
   </ion-list>
