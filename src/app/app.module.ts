@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { AddDrug } from '../pages/add-new/add-drug.component';
+import { AddDrug } from '../pages/add-new/add-drug';
 
 @NgModule({
   declarations: [

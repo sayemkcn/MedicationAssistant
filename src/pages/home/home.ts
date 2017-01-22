@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import {AddDrug} from '../add-new/add-drug.component';
+import {AddDrug} from '../add-new/add-drug';
 
 @Component({
   selector: 'page-home',
