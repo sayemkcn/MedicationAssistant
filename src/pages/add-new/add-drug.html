@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Add New Drug
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list inset>
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="drug.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select [(ngModel)]="drug.type">
+        <ion-option value="tablet" selected="true">Tab</ion-option>
+        <ion-option value="capsule">Capsule</ion-option>
+        <ion-option value="syrap">Syrap</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times"></ion-datetime>
+    </ion-item>
+
+    <button ion-button full (click)="addDrugButtonClick()">Add Drug</button>
+  </ion-list>
+  
+
+</ion-content>
