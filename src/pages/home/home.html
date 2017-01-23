@@ -6,13 +6,22 @@
 
 <ion-content padding>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <ion-fab top right edge>
     <button (click)="addNewButtonClick()" ion-fab mini><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
   <ion-list>
     <ion-item-sliding *ngFor="let drug of druglist" #item>
-      <ion-item>
+      <ion-item *ngIf="drug != null">
         <h2>{{drug.type}} {{drug.name}}</h2>
         <p>{{drug.medicationCounter}} times a day for {{drug.days}} days | {{drug.comment}}</p>
       </ion-item>
