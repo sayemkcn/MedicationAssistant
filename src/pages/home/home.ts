@@ -21,13 +21,22 @@ export class HomePage {
   ionViewWillEnter(){
     this.storage.get("druglist").then(val=>{
       this.druglist = val;
-      console.log(this.druglist);
+      // console.log(this.druglist);
     })
   }
 
   addNewButtonClick(){
     let modal = this.modalCtrl.create(AddDrug);
     modal.present();
+  }
+
+  editItem(drug : IDrug){
+    this.navCtrl.push(AddDrug,drug);
+    // console.log(drug);
+  }
+
+  deleteItem(drug : IDrug){
+    console.log(drug);
   }
 
 }
