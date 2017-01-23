@@ -41,7 +41,7 @@
     <ion-list *ngIf="drug.medicationCounter > 0">
       <ion-item *ngFor="let x of numbers">
         <ion-label>Time {{x}}</ion-label>
-        <ion-datetime displayFormat="hh:mm:ss a" [(ngModel)]="drug.times[x-1]"></ion-datetime>
+        <ion-datetime displayFormat="hh:mm a" [(ngModel)]="drug.times[x-1]"></ion-datetime>
       </ion-item>
     </ion-list>
     <ion-item>
